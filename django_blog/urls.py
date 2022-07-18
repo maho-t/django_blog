@@ -20,12 +20,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django_blogs.urls')),
 ]
-
-from django.urls import path
-from . import views
-
-app_name = 'django_blogs'
-urlpatterns = [
-    #ホームページ
-    path('', views.index, name='index'),
-]
