@@ -1,0 +1,13 @@
+{% extends "django_blogs/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'user:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">登録する</button>
+    <input type="hidden" name="next" value="{% url 'django_blogs:index' %}" />
+  </form>
+  
+{% endblock content %}
