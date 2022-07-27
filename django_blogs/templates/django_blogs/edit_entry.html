@@ -1,0 +1,15 @@
+{% extends "django_blogs/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'django_blogs:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>記事を編集：</p>
+
+  <form action="{% url 'django_blogs:edit_entry' entry.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">記事を更新</button>
+  </form>
+  
+{% endblock content %}
